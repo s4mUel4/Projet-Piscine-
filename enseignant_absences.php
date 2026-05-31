@@ -5,7 +5,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["role"] !== 'enseignant'){
 }
 require_once 'config.php';
 
-// On récupère les étudiants des cours de ce prof
+
 $sql = "SELECT i.id AS id_inscription, u.nom, u.prenom, c.libelle AS cours_nom 
         FROM inscriptions i
         JOIN utilisateurs u ON i.id_etudiant = u.id
