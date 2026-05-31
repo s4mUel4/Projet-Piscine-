@@ -56,7 +56,7 @@ $etudiants = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
         
         <?php if(isset($_GET['statut']) && $_GET['statut'] == 'success'): ?>
-            <div class="success-msg">✅ L'appel a été enregistré avec succès !</div>
+            <div class="success-msg"> L'appel a été enregistré avec succès !</div>
         <?php endif; ?>
         
         <div class="card">
