@@ -11,10 +11,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $date_cours = $_POST['date_cours'];
     $statut = $_POST['statut'];
     
-    // Si c'est justifié, on met un 1 dans la colonne est_justifie de la base de données
     $est_justifie = ($statut == 'Justifié') ? 1 : 0; 
 
-    // On vérifie si un statut existe DÉJÀ pour cet élève, ce cours et cette DATE précise
     $check = $pdo->prepare("SELECT id FROM presences WHERE id_inscription = :id_inscription AND date_cours = :date_cours");
     $check->execute([
         ':id_inscription' => $id_inscription,
